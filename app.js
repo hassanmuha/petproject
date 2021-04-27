@@ -31,11 +31,9 @@ const formData = (bodyData) => {
 		}
 	});
 };
-
-
 const app = express();
 
-
+//Assigned port
 const port = process.env.PORT || 8082; 
 
 
@@ -103,12 +101,10 @@ app.listen(8082,() =>{
 });
 
 //MongoDb 
-
 const urlencodedParser = bodyParser.urlencoded({extended: false})
 
 // The API used to post form values to mongodb 
 app.post('/contact', urlencodedParser, (req, res) => {
 	formData (req.body);
 	res.redirect('/');
-		
 	});
